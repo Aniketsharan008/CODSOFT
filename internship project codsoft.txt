@@ -1,0 +1,32 @@
+a = input("choose one sign (+ - * /):")
+nums = []
+print("Enter number:")#this is used for enter the number one after another
+while True:
+    entry=input("->")
+    if entry.lower() == "stop": #stop will finsh the turns of user inputs.
+        break
+    try:
+        nums.append(float(entry))
+    except:
+        print("invalid number!")
+if len(nums)<2:
+    print("enter atleast two number")
+else:
+    total = nums[0]
+    for n in nums[1:]:
+        if a == "+":
+            total += n
+        elif a =="-":
+            total -= n
+        elif a =="*":
+            total *= n
+        elif a =="/":
+            if n == 0:
+                print("skipped dividion by zero")
+                continue
+            total/=n
+        else:
+            print("unknown operation")
+            break
+    else:
+            print("Ans:",total)
